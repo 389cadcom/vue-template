@@ -1,0 +1,21 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+  },
+  "eslint.workingDirectories": [
+    "./src"
+  ],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "vue"
+  ],
+  "[html]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": false
+    }
+  },
+  "vetur.format.options.useTabs": false,
+  "vetur.validation.template": true
+}
