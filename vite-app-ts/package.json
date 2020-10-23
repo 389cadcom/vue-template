@@ -18,6 +18,7 @@
     "@typescript-eslint/eslint-plugin": "^4.5.0",
     "@typescript-eslint/parser": "^4.5.0",
     "@vue/compiler-sfc": "^3.0.0-rc.1",
+    "autoprefixer": "9.8.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-config-prettier": "^6.14.0",
@@ -29,5 +30,11 @@
     "typescript": "^4.0.3",
     "vite": "^1.0.0-rc.1"
   },
+  "browserslist": [
+    "last 2 version",
+    ">1%",
+    "ie >=10",
+    "ios >=8"
+  ],
   "license": "ISC"
 }

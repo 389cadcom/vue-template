@@ -33,6 +33,10 @@ export default {
 </script>
 
 <style lang="scss">
+h3 {
+  font-size: 18px;
+  color: red;
+}
 img {
   border: 1px solid $bg;
 }
