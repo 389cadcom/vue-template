@@ -1,0 +1,10 @@
+@import './base/reset';
+@import './base/space';        
+@import './base/flex';     
+@import './icon';     
+
+@import './scss/sprite1';       
+
+body {
+  // @include linear(white 30%, red);
+}

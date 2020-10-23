@@ -1,0 +1,24 @@
+@for $i from 12 through 20 {
+  .f#{$i}{font-size: $i + px}
+}
+
+$map: (n: 0, x: 3px, s: 5px, m: 10px, l: 15px, h:20px);
+$names: (p: padding, m: margin);
+$directions: (t: top, r:right, b: bottom, l: left);
+@each $n-key, $n-value in $names{
+  @each $d-key, $d-value in $directions {
+    @each $size, $space in $map {
+      @if ($d-key == t) or ($d-key == b) {
+        .#{$n-key}#{$d-key}#{$size}, .#{$n-key}v#{$size}, .#{$n-key}a#{$size}{
+          #{$n-value}-#{$d-value}: $space !important;
+        }
+      }
+
+      @if ($d-key == l) or ($d-key == r) {
+        .#{$n-key}#{$d-key}#{$size}, .#{$n-key}h#{$size}, .#{$n-key}a#{$size}{
+          #{$n-value}-#{$d-value}: $space !important;
+        }
+      }
+    }
+  }
+}

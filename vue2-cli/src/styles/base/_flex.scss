@@ -1,0 +1,34 @@
+
+// flex布局
+.flex-column {
+	display: flex;
+	flex-direction: column;
+}
+.flex--col {
+	flex-direction: column;
+}
+.flex--top {
+	display: flex;
+	align-items: flex-start;
+}
+.flex--center {
+	display: flex;
+	justify-content: center;
+}
+.flex--middle {
+	display: flex;
+	align-items: center;
+}
+.flex--center-middle {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.flex--around {
+	display: flex;
+	justify-content: space-around;
+}
+.flex--between{
+	display: flex;
+	justify-content: space-between;
+}
