@@ -11,17 +11,16 @@
 import HelloWorld from '@/components/HelloWorld.vue'
 import { confirm } from '@/decorators'
 
-console.log(confirm)
 export default {
   name: 'Home',
   components: {
     HelloWorld,
   },
   methods: {
-    @confirm()
-    handler() {
-      // this.$toast('obj')
-      console.log('object')
+    // @confirm()
+    async handler() {
+      var res = await this.$api.send({ name: 'lonve', age: 10 })
+      console.log('object', res)
     },
   },
 }

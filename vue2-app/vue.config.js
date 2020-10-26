@@ -38,7 +38,7 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        '@views': 'src/views',
+        '@views': './src/views',
       },
       extensions: ['.scss', '.css', '.less'],
     },
