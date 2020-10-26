@@ -11,7 +11,8 @@ module.exports = {
     "postcss-plugin-px2rem": {
       rootValue: 20,
       minPixelValue: 16,
-      exclude: /(node_module)/
+      exclude: /(node_module)/,
+      selectorBlackList: [],
     }
   }
 };

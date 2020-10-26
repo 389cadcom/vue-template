@@ -2,7 +2,7 @@ const { ChainConfig, SpritesMith } = require('./config')
 const isDev = process.env.NODE_ENV == 'development' ? true : false
 
 module.exports = {
-  lintOnSave: true,
+  lintOnSave: false,
   publicPath: './',
   assetsDir: 'static',
   productionSourceMap: isDev,

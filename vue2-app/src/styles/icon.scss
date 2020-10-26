@@ -1,0 +1,47 @@
+//keyframes
+@mixin keyframes($animate) {
+  @keyframes #{$animate} {
+    @content;
+  }
+}
+
+// 字体图标
+@font-face {
+  font-family: "iconfont";
+  font-weight: normal;
+  font-style: normal;
+  src:  url('~@/assets/fonts/iconfont.eot?hba3e7');
+  src:  url('~@/assets/fonts/iconfont.eot?hba3e7#iefix') format('embedded-opentype'),
+    url('~@/assets/fonts/iconfont.ttf?hba3e7') format('truetype'),
+    url('~@/assets/fonts/iconfont.woff?hba3e7') format('woff'),
+    url('~@/assets/fonts/iconfont.svg?hba3e7#iconfont') format('svg');
+};
+
+$maps: (
+  'down'     : 'e600',
+  'eye'      : 'e629',
+  'msg'      : 'e619',
+  'user'     : 'e7bd',
+);
+
+@function addContent($icon){
+  @return unquote("\'\\#{$icon}\'");
+}
+
+@mixin icon($pos:before, $icon: false){
+  &::#{$pos}{
+    content: addContent($icon);
+  }
+}
+.font{
+  font-family: 'iconfont' !important;
+  font-size:1.2rem;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+};
+@each $name, $ico in $maps {
+  .font-#{$name}{
+    @include icon($icon: $ico);
+  }
+}

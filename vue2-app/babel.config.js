@@ -1,9 +1,9 @@
 module.exports = {
   presets: ['@vue/cli-plugin-babel/preset'],
   plugins: [
-    '@babel/plugin-proposal-optional-chaining',
+    // '@babel/plugin-proposal-optional-chaining',
     [
-      ('import',
+      'import',
       {
         libraryName: 'vant',
         libraryDirectory: 'es',
@@ -11,7 +11,6 @@ module.exports = {
           return `${name}/style/less`
         },
       },
-      'vant')
     ],
   ],
 }

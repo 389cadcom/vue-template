@@ -1,0 +1,25 @@
+{
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+  },
+  "eslint.workingDirectories": [
+    "./src"
+  ],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "vue"
+  ],
+  "[html]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": false
+    }
+  },
+  "vetur.format.enable": false,
+  "vetur.validation.script": false,
+  "vetur.validation.template": true,
+  // "problems.decorations.enabled": false,
+  // "javascript.implicitProjectConfig.experimentalDecorators": true,
+}
