@@ -20,11 +20,11 @@ module.exports = config => {
     .tap(options => ({ ...options, limit: 1024 }))
 
   //svg处理
-  config.module.rule('svg').exclude.add(resolve('./src/assets/icons'))
+  config.module.rule('svg').exclude.add(resolve('./src/icons'))
   config.module
     .rule('svg-sprite')
     .test(/\.svg$/)
-    .include.add(resolve('./src/assets/icons'))
+    .include.add(resolve('./src/icons'))
     .end()
     .use('svg-sprite-loader')
     .loader('svg-sprite-loader')

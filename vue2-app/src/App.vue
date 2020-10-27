@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <i class="sprite sprite-1"></i>
+    <i class="sprite1 sprite1-addr"></i>
+    <svg-icon name="door" color="red" @click="handler"></svg-icon>
+    <svg-icon name="vip" color="red" @click="handler"></svg-icon>
     <div id="nav">
       <router-link to="/">Home</router-link>
       |
@@ -9,9 +11,17 @@
     <router-view />
   </div>
 </template>
-
+<script>
+export default {
+  methods: {
+    handler() {
+      console.log('svg-icon')
+    },
+  },
+}
+</script>
 <style lang="scss">
-@import './styles/scss/sprite.scss';
+@import './styles/scss/sprite1.scss';
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

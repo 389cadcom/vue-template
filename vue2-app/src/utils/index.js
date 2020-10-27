@@ -1,1 +1,1 @@
-export { format } from './util.date'
+export { format } from './util-date'

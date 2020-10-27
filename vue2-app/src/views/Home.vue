@@ -2,7 +2,7 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js App" />
-    <button @click="handler">click</button>
+    <van-button type="info" @click="handler">click</van-button>
   </div>
 </template>
 

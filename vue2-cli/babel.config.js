@@ -15,5 +15,3 @@ module.exports = {
     ],
   ],
 }
-
-//vant/es/tag/style/less.js

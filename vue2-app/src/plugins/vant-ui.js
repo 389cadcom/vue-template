@@ -1,16 +1,15 @@
-//网络icon地址:      https://img.yzcdn.cn/vant/vant-icon-6ae417.ttf
-//引用本地vant icon  import 'vant/es/icon/local.css'
-
-//vant/es/tag/style/less.js
-
+/*
+  网络icon地址:      https://img.yzcdn.cn/vant/vant-icon-6ae417.ttf
+  引用本地vant icon  import 'vant/es/icon/local.css'
+  vant/es/tag/style/less.js
+*/
+/* eslint-disable prettier/prettier */
 import { Button, Tag, Dialog, Toast } from 'vant'
-
 const components = [Button, Tag, Dialog, Toast]
-
 
 //全局插件
 export default Vue => {
-  components.forEach( item => {
+  components.forEach(item => {
     if (item.name == 'Dialog') {
       Vue.prototype.$confirm = Dialog.confirm
       Vue.prototype.$alert = Dialog.alert
@@ -22,5 +21,4 @@ export default Vue => {
       Vue.component(item.name, item)
     }
   })
-  
 }
