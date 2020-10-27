@@ -19,7 +19,7 @@ export default {
   methods: {
     // @confirm()
     async handler() {
-      var res = await this.$api.send({ name: 'lonve', age: 10 })
+      var res = await this.$api.getTest({ name: 'lonve', age: 10 })
       console.log('object', res)
     },
   },

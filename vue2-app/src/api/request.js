@@ -3,16 +3,24 @@ import qs from 'qs'
 import { Toast } from 'vant'
 import { trimParmas } from './tools'
 
-axios.defaults = {
-  baseURL: process.env.BASE_API,
-  timeout: 30000,
-}
-const instance = axios.create({})
+// console.log(axios.defaults.headers)
+const baseURL = ''
+const instance = axios.create({
+  baseURL,
+  timeout: 16000,
+})
 
 //请求拦截
 instance.interceptors.request.use(
   async config => {
     //await awaitToken(config.url)
+    //get缓存处理
+    if (config.method === 'get') {
+      config.params['v'] = Date.now()
+    }
+    if (config.method === 'post' && !config.upload) {
+      config.data = qs.stringify(config.data)
+    }
     return config
   },
   error => {
@@ -22,12 +30,13 @@ instance.interceptors.request.use(
 //响应拦截
 instance.interceptors.response.use(
   res => {
+    // console.log(res)
     switch (res.data.code) {
       case 500:
         Toast.fail(res.data.msg)
         break
     }
-    return JSON.parse(res.data)
+    return res.data
   },
   error => {
     let msg = '',
@@ -38,7 +47,12 @@ instance.interceptors.response.use(
         break
       case 403:
         msg = '登陆失效'
+        break
+      case 404:
+        msg = '请求接口不存在'
+        break
     }
+    console.error(res.status, msg || error.message)
     return Promise.reject(error.message)
   }
 )
@@ -55,12 +69,15 @@ const request = (url, method, data, opts = {}) => {
   return instance(config)
 }
 
+//导出方法接口
 const get = (url, params = {}, opts = {}) => {
   return request(url, 'get', params, opts)
 }
 const post = (url, data = {}, opts = {}) => {
-  console.log(data)
-  return request(url, 'post', qs.stringify(data), opts)
+  return request(url, 'post', data, opts)
+}
+const upload = (url, data = {}, opts = { upload: true }) => {
+  return request(url, 'post', data, opts)
 }
 
 //挂载取消请求
@@ -71,5 +88,6 @@ const post = (url, data = {}, opts = {}) => {
 export default {
   get,
   post,
+  upload,
   instance,
 }
