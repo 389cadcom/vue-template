@@ -24,5 +24,23 @@ module.exports = {
         },
       },
     ],
+    // 组件在template内必须使用 kebab-case 格式
+    'vue/component-name-in-template-casing': [
+      'error',
+      'kebab-case',
+      {
+        registeredComponentsOnly: false,
+        ignores: [],
+      },
+    ],
+    // vue Html元素单标签关闭方式
+    'vue/html-self-closing': [
+      'error',
+      {
+        html: { normal: 'never', void: 'always' },
+        svg: 'always',
+        math: 'always',
+      },
+    ],
   },
 }
