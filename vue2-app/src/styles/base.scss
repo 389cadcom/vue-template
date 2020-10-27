@@ -1,0 +1,29 @@
+@import './mixin/reset';
+@import './mixin/flex';
+// @import './mixin/animate';
+// @import './mixin/space';
+
+.red {
+  color: $red !important;
+}
+.blue {
+  color: $blue !important;
+}
+.white {
+  color: #fff !important;
+}
+.gray-6 {
+  color: $gray-6;
+}
+.gray-7 {
+  color: $gray-7;
+}
+
+.h100 {
+  height: 100% !important;
+}
+.img {
+  object-fit: fill;
+  width: 100%;
+  height: 100%;
+}

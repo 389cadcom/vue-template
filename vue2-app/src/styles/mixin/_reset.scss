@@ -1,0 +1,46 @@
+html{
+  font-size: 20px;
+  font-size: 5.33333vw;
+}
+@media screen and (max-width: 320px) {
+	html {
+		font-size: 16px;
+	}
+}
+@media screen and (min-width: 540px) {
+	html {
+    font-size: 28.8px;
+	}
+}
+[v-cloak] { visibility: hidden }
+body {
+  margin: 0 auto;
+	max-width: 640px;
+  min-width: 320px;
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: -apple-system, Helvetica, sans-serif arial;
+}
+
+h1, h2,h3, h4, h5, p{
+  padding: 0;
+  margin: 0 auto;
+}
+.text-right{
+  text-align: right;
+}
+.text-center{
+  text-align: center;
+}
+.hide{
+  display: none;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 6px 0;
+  padding: 0;
+}

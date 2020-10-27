@@ -38,24 +38,24 @@ exports.SpritesMith = function(name = 'sprite') {
   return new SpritesmithPlugin({
     src: {
       cwd: 'src/assets/' + name, //图标根目录路径
-      glob: '**/*.png'
+      glob: '**/*.png',
     },
     target: {
       image: 'public/static/images/' + name + '.png', //生成图片路径
       css: [
         [
-          'src/styles/scss/_' + name + '.scss', //生成样式路径
-          { format: formatname }
-        ]
-      ]
+          'src/styles/sprite/_' + name + '.scss', //生成样式路径
+          { format: formatname },
+        ],
+      ],
     },
     apiOptions: {
       //样式引用图片路径
-      cssImageRef: '/static/images/' + name + '.png'
+      cssImageRef: '/static/images/' + name + '.png',
     },
     spritesmithOptions: {
-      padding: 4
+      padding: 4,
     },
-    customTemplates: templates
+    customTemplates: templates,
   })
 }

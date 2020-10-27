@@ -51,7 +51,7 @@ module.exports = {
   css: {
     loaderOptions: {
       scss: {
-        // prependData: ` @import "~@/styles/mixin/_utils.scss"; @import "~@/styles/mixin/theme.scss"; `,
+        prependData: ` @import "~@/styles/mixin/_utils.scss"; @import "~@/styles/_variables.scss"; `,
       },
       less: {
         modifyVars: {

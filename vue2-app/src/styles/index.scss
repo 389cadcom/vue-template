@@ -1,22 +1,23 @@
-html{
-  font-size: 20px;
-  font-size: 5.33333vw;
-}
-@media screen and (max-width: 320px) {
-	html {
-		font-size: 16px;
-	}
-}
-@media screen and (min-width: 540px) {
-	html {
-    font-size: 28.8px;
-	}
-}
+@import './base.scss';
+@import './themes/green.scss';
+@import './themes/dark.scss';
+
+html,
 body {
-  margin: 0 auto;
-	max-width: 640px;
-  min-width: 320px;
-  font-size: 14px;
-  line-height: 1.6;
-  font-family: -apple-system, Helvetica, sans-serif arial;
+  height: 100%;
+  overflow-y: auto;
+  background-color: #f1f3f5;
+}
+
+#app {
+  overflow: hidden;
+  min-height: 100vh;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+.router {
+  width: 100%;
+  backface-visibility: hidden;
+  min-height: 100vh;
 }

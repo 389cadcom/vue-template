@@ -1,0 +1,133 @@
+//缩略文本
+%ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+@mixin middle($direction) {
+	position: absolute;
+	@if($direction == vertical){
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%);
+	}
+	@if($direction == vertical){
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	@if($direction == horizontal){
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+@mixin linear($color1, $color2, $direction:bottom) {
+	background: linear-gradient(to $direction, $color1, $color2);
+}
+
+@mixin ellipsis($width:100%){
+	width: $width;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+@mixin multi($line: 2) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}
+
+//高清屏1像素线条
+@mixin oneline($direction: bottom, $color: rgba(0, 0, 0, .1)) {
+	position: absolute;
+	content: ' ';
+	#{$direction}: 0px;
+	border-#{$direction}: 1px solid $color;
+
+	@if ($direction == top) or ($direction == bottom) {
+		transform: scaleY(0.5);
+		left: 0;
+		right: 0;
+	}
+	@if ($direction == left) or ($direction == right) {
+		transform: scaleX(0.5);
+		top: 0;
+		bottom: 0;
+	}
+}
+@mixin boxline($color: #e6e6e6, $radius:0){
+/*   content: ' ';
+	display: block;
+	position: absolute;
+  z-index: 999;
+	width: 200%;
+	height: 200%;
+	left: 0;
+	top: 0;
+	border: 1px solid $color;
+	border-radius: $radius;
+	transform: scale(0.5);
+	transform-origin: 0 0; */
+
+	position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  border: 1px solid $color;
+	border-radius: $radius;
+	transform: scale(0.5);
+}
+
+//小箭头
+@mixin arrow( $width: 7px, $border: 1px, $borderColor: #ccc, $bgColor: #fff, $fill: left ) {
+	$width1: $width - $border;
+	position: relative;
+	display: inline-block;
+	width: $width * 2;
+	height: $width * 2;
+	&:before, &:after {
+		content: '';
+		position: absolute;
+		border-style: solid;
+		border-color: transparent;
+	}
+	&:before {
+		top: 0;
+		left: 0;
+		border-width: $width;
+		border-#{$fill}-color: $borderColor;
+	}
+	&:after {
+		@if ($fill==top) or ($fill==bottom) {
+			left: $border;
+		}
+		@if ($fill==left) or ($fill==right) {
+			top: $border;
+		}
+		#{$fill}: 0;
+		border-width: $width1;
+		border-#{$fill}-color: $bgColor;
+	}
+}
+
+@mixin arrow {
+  position: absolute;
+  content: " ";
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  border-width: 1px 1px 0 0;
+  border-color: #C8C8CD;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  top: 50%;
+  margin-top: -4px;
+  right: 2px;
+}
+

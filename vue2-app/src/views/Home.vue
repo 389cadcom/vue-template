@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
+    <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
     <hello-world msg="Welcome to Your Vue.js App" />
     <van-button type="info" @click="handler">click</van-button>
   </div>
