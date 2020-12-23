@@ -42,6 +42,11 @@ module.exports = config => {
         priority: 10,
         chunks: 'initial'
       },
+			vue: {
+        test: /[\\/]node_modules[\\](vue|vue-router|vuex|axios)[\\/]/,
+        name: 'chunk-vue',
+        priority: 15
+      },
       vant: {
         test: /[\\/]node_modules[\\]vant[\\/]/,
         name: 'chunk-vant',

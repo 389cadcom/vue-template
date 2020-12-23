@@ -1,6 +1,8 @@
 // import NP from 'number-precision'
+// export { default as HomeOutline } from '@ant-design/icons/lib/outline/HomeOutline'
 
-export { format } from './util-date'
+export { dateFormat } from './util-date'
+export { compressImage } from './util-compress'
 
 /**
  * 缓动算法 | 平滑滚动

@@ -4,8 +4,8 @@
   vant/es/tag/style/less.js
 */
 /* eslint-disable prettier/prettier */
-import { Button, Tag, Dialog, Toast } from 'vant'
-const components = [Button, Tag, Dialog, Toast]
+import { Button, Tag, Dialog, Toast, Icon } from 'vant'
+const components = [Button, Tag, Dialog, Toast, Icon]
 
 //全局插件
 export default Vue => {

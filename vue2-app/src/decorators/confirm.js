@@ -30,11 +30,11 @@ export const loading = (message = '加载中...', errFn) => {
  */
 export const confirm = (message = '确定要删除该数据?', cancelFn = function() {}) => {
   return (target, name, descriptor) => {
-    let fn = descriptor.value
-    descriptor.value = async (...rest) => {
+    let oldValue = descriptor.value
+    descriptor.value = async function(...args) {
       try {
         await Dialog.confirm({ message })
-        fn.apply(this, rest)
+        oldValue.apply(this, args)
       } catch (error) {
         cancelFn()
       }

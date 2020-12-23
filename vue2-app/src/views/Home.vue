@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
+		<van-icon name="search"/>
     <hello-world msg="Welcome to Your Vue.js App" />
     <van-button type="info" @click="handler">click</van-button>
   </div>
@@ -21,7 +22,7 @@ export default {
     }
   },
   methods: {
-    // @confirm()
+    //@confirm()
     async handler() {
       var res = await this.$api.getTest({ name: 'lonve', age: 10 })
       console.log('object', res)

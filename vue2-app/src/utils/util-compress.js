@@ -5,7 +5,7 @@ import EXIF from './exif'
  * @param {文件}} file
  * @param {质量} quality
  */
-export default function(file, quality = 0.8) {
+export function compressImage(file, quality = 0.8) {
   if (file.size / 1024 < 1025) {
     return Promise.resolve(file)
   }

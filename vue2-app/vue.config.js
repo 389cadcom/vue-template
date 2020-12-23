@@ -61,3 +61,7 @@ module.exports = {
     },
   },
 }
+/*
+  注意：在 sass-loader v8 中，这个选项名是 "prependData", 在v8之前--> data
+  additionalData: `@import "~@/variables.sass"`
+*/

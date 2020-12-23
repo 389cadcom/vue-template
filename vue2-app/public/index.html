@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
+		<!-- <script src="https://cdn.bootcss.com/vConsole/3.3.4/vconsole.min.js"></script> -->
+	  <!-- <script>new VConsole()</script> -->
   </head>
   <body>
     <noscript>
@@ -14,4 +16,22 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
+<script>
+function append(url) {
+  var s=document.createElement('script')
+  s.src=url
+  document.getElementsByTagName('script')[0].appendChild(s)
+}
+if(location.href.match(/debug=.*?true/)) {
+  append('https://cdn.bootcss.com/eruda/1.5.2/eruda.min.js')
+  ;(function aa(){
+    try {
+      eruda.init()
+    } catch (error) {
+      console.log(error)
+      setTimeout(aa, 1e2)
+    }
+  })()
+}
+</script>
 </html>

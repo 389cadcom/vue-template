@@ -12,7 +12,7 @@ const isNumber = num => typeof num === 'number'
  * @param {*} datetime 
  * @param {*} format 
  */
-export const dataFormat = (datetime, format = DATE_FMT) => {
+export const dateFormat = (datetime, format = DATE_TIME_FMT) => {
   var date = new Date(datetime)
   var map = {
     'M+': date.getMonth() + 1,
