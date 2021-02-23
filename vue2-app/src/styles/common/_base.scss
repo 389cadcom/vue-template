@@ -2,7 +2,9 @@
 @import './mixin/flex';
 // @import './mixin/animate';
 // @import './mixin/space';
-
+*{
+  box-sizing: border-box;
+}
 .red {
   color: $red !important;
 }

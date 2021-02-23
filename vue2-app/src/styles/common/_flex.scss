@@ -1,0 +1,46 @@
+/*
+	flex布局
+*/
+.flex-box, .flex {
+	display: flex;
+
+	&-v{
+		display:flex;
+		align-items: center;
+	}
+	&-h{
+		display:flex;
+		justify-content: center;
+	}
+	&-vh, &-center{
+		display:flex;
+		align-items: center;
+  	justify-content: center;
+	}
+	&-left{
+		justify-content: flex-start;
+	}
+	&-top{
+		align-items: flex-start;
+	}
+
+	//垂直
+	&-col, &-between{
+		display: flex;
+		height: 100%;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+}
+
+
+.flex1{
+  flex:1;
+}
+.flex2{
+  flex:2;
+}
+
+.flex-none {
+	flex: none;
+}

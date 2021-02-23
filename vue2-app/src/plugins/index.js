@@ -3,10 +3,10 @@ import VueMeta from 'vue-meta'
 
 import * as $utils from '@/utils'
 import $api from '@/api/api-list'
-import '@/styles/index.scss'              //引入全局样式
 
 import VantUI from './vant-ui'            //统一注册vant ui
 import '@/icons'                          //引入svg-icon
+import '@/styles/index.scss'              //引入全局样式
 
 
 //ios12 光标点击定位bug

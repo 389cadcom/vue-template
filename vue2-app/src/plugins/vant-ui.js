@@ -4,8 +4,20 @@
   vant/es/tag/style/less.js
 */
 /* eslint-disable prettier/prettier */
-import { Button, Tag, Dialog, Toast, Icon } from 'vant'
-const components = [Button, Tag, Dialog, Toast, Icon]
+import {
+  Button, CellGroup, Cell, Field,  Image, Icon, NavBar, NoticeBar,
+  RadioGroup, Radio, Tag, CheckboxGroup, Checkbox, Search, Empty,
+  Switch, Tabs, Tab, Tabbar, TabbarItem, Steps, Step, Uploader,
+  List, PullRefresh, Popup, Skeleton, IndexBar, IndexAnchor,
+  Collapse, CollapseItem, Picker, DatetimePicker, Dialog, ImagePreview
+} from 'vant'
+const components = [
+  Button, CellGroup, Cell, Field,  Image, Icon, NavBar, NoticeBar,
+  RadioGroup, Radio, Tag, CheckboxGroup, Checkbox, Search, Empty,
+  Switch, Tabs, Tab, Tabbar, TabbarItem, Steps, Step, Uploader,
+  List, PullRefresh, Popup, Skeleton, IndexBar, IndexAnchor,
+  Collapse, CollapseItem, Picker, DatetimePicker, Dialog, ImagePreview
+]
 
 //全局插件
 export default Vue => {

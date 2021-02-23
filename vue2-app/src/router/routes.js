@@ -1,20 +1,18 @@
-import Home from '../views/Home'
 const files = require.context('./modules', false, /\.js$/)
 
 const routes = [
-  {
+  /* {
     path: '/',
     name: 'Home',
     component: Home,
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
-  },
+  }, */
 ]
 
+let exclude = ['demo']
 files.keys().forEach(key => {
+  let name = key.replace(/^\.\/|\.js$/g, '')
+  // if (exclude.includes(name)) return false
+
   let file = files(key).default
   if (Array.isArray(file)) {
     routes.push(...file)

@@ -1,4 +1,4 @@
-import $axios from './request'
+import $axios from './axios'
 
 let url = 'http://mock.allhome.com.cn/mock/5f7fddf8cc51c50010bf12f3/example'
 export default {
