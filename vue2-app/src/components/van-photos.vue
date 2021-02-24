@@ -1,7 +1,7 @@
 <template>
-  <van-cell size="small" :title="title" class="photos-view" :border="false" v-show="images.length">
+  <van-cell :title="title" class="photos-view" :border="false" v-show="images.length">
     <template #label>
-      <van-image v-for="(img, i) in images" :key="i" :src="img" fit="cover" @click="showPreview(i)" />
+      <van-image v-for="(img, i) in images" :key="i" :src="img" fit="contain" @click="showPreview(i)" />
     </template>
   </van-cell>
 </template>
@@ -34,11 +34,11 @@ export default {
 <style lang="scss">
 .photos-view {
   $gutter: 8px;
-  margin-bottom: -$gutter;
   .van-cell__label {
     display: flex;
     flex-wrap: wrap;
     margin-right: -$gutter;
+    margin-bottom: -$gutter;
 
     .van-image {
       box-sizing: border-box;

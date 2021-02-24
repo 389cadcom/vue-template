@@ -6,6 +6,7 @@
 /* eslint-disable prettier/prettier */
 import {
   Button, CellGroup, Cell, Field,  Image, Icon, NavBar, NoticeBar,
+  Grid, GridItem,
   RadioGroup, Radio, Tag, CheckboxGroup, Checkbox, Search, Empty,
   Switch, Tabs, Tab, Tabbar, TabbarItem, Steps, Step, Uploader,
   List, PullRefresh, Popup, Skeleton, IndexBar, IndexAnchor,
@@ -13,6 +14,7 @@ import {
 } from 'vant'
 const components = [
   Button, CellGroup, Cell, Field,  Image, Icon, NavBar, NoticeBar,
+  Grid, GridItem,
   RadioGroup, Radio, Tag, CheckboxGroup, Checkbox, Search, Empty,
   Switch, Tabs, Tab, Tabbar, TabbarItem, Steps, Step, Uploader,
   List, PullRefresh, Popup, Skeleton, IndexBar, IndexAnchor,

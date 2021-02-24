@@ -22,8 +22,8 @@
 .van-cell{
   &-group{
     margin-top: 10px;
-    &__title + .van-cell-group, 
-    &:first-of-type{
+    &:first-of-type,
+    &__title + .van-cell-group {
       margin-top: 0;
     }
     
@@ -32,16 +32,19 @@
       background-color: $bg;
     }
 
-    &[type=small]{
+    &[size=small] .van-cell{
       padding: 5px 8px;
     }
-    &[type=large]{
+    &[size=large]{
       .van-cell{
         padding-top: 12px;
         padding-bottom: 12px;
         font-size: 16px;
       }
-    }
+      .van-cell__label{
+        font-size: 14px;
+      }
+    } 
     &.radius{
       border-radius: $gutter/2;
       overflow: hidden;
@@ -58,35 +61,45 @@
 }
 
 .field-box {
-  margin-top: -12px;
-  .van-field__value {
+  .van-cell__value {
     position: relative;
-    padding: 4px 6px;
+    padding: 6px;
     &::before {
       @include boxline(#ddd, 8px);
       z-index: 0;
     }
+    &--alone{
+      margin-top: -12px;
+    }
   }
 }
 
-//btn-icon按钮
-.van-btn-icon{
-  position: relative;
-  height: 32px;
-  padding: 0 10px;
-  color: #555;
-  border: none;
+//<van-icon class-prefix="my-icon" name="extra" />
 
-  &:not(:last-child){
-    &::after{
-      @include oneline(right);
-      top: 8px;
-      bottom: 8px;
+//van-button-icon按钮
+.van-button{
+  &[column], &[group]{
+    position: relative;
+    height: auto;
+    border: none;
+  }
+}
+.van-button[column]{
+  .van-button{
+    &__content{
+      &::before{display: none;}
+      flex-direction: column;
     }
+    &__icon{font-size: 1.3em;}
+    &__text{ margin-left: 0; }
   }
-  .van-icon{
-    margin-right: 6px;
-  }
+}
+
+.van-button[group]:not(:last-child)::after{
+  @include oneline(right);
+  transform: translateY(-50%);
+  top: 50%;
+  height: 18px;
 }
 
 .van-search {

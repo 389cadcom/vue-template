@@ -1,7 +1,9 @@
 /*
 	flex布局
+	<van-row type="flex" justify="end center space-around space-between" align="center bottom">
+	</van-row>
 */
-.flex-box, .flex {
+.flex {
 	display: flex;
 
 	&-v{
@@ -17,30 +19,40 @@
 		align-items: center;
   	justify-content: center;
 	}
-	&-left{
-		justify-content: flex-start;
+
+	&-bottom{
+		align-items: flex-end;
 	}
-	&-top{
-		align-items: flex-start;
+	&.around{
+		justify-content: space-around;
+	}
+	&.between{
+		justify-content: space-between;
 	}
 
 	//垂直
-	&-col, &-between{
+	&-col{
 		display: flex;
-		height: 100%;
 		flex-direction: column;
-		justify-content: space-between;
+		
+		height: 100%;
+		&.between{
+			justify-content: space-between;
+		}
 	}
-}
 
+	&-wrap{
+		$gutter: 8px;
+		flex-wrap: wrap;
+		margin-right: -$gutter;
+		.item{
+			flex-basis: 50%;
+			padding-right: $gutter;
+			margin-bottom: $gutter;
+		}
+	}
 
-.flex1{
-  flex:1;
-}
-.flex2{
-  flex:2;
-}
-
-.flex-none {
-	flex: none;
+	&-1{ flex:1; }
+	&-2{ flex:2; }
+	&-0, &-none{ flex: none; }
 }
