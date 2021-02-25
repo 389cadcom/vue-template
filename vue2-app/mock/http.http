@@ -1,0 +1,4 @@
+POST http://172.16.60.124:8080/apiPath/user/login
+
+###
+GET http://172.16.60.124:8080/apiPath/user/info?username=lonves

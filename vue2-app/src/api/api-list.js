@@ -1,11 +1,14 @@
 import $axios from './axios'
 
-let url = 'http://mock.allhome.com.cn/mock/5f7fddf8cc51c50010bf12f3/example'
+let baseURL = process.env.VUE_APP_BASE_API
 export default {
-  getTest(data) {
-    return $axios.get(`${url}/mock`, data)
+  getUser(data) {
+    return $axios.post(`${baseURL}/user/xxx`, data)
   },
-  send(data) {
-    return $axios.post(`${url}/upload`, data)
+  getTest(data) {
+    return $axios.get(`${baseURL}/user/login`, data)
+  },
+  getList(data) {
+    return $axios.get(`${baseURL}/rec/getTodoCheckCarList`, data)
   },
 }

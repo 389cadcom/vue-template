@@ -4,16 +4,28 @@
   field: label, input, left-icon, right-icon, button, extra | label-width, label-align, input-align
 */
 .cell-detail{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  .group-title{
+    font-size: 18px;
+    font-weight: 500;
+  }
   .van-cell{
+    $text-color:#222;
+    padding-top: 5px;
+    padding-bottom: 5px;
     &__title {
       flex: none;
       min-width: 72px;
       margin-right: 8px;
-      // color: $gray-6;
+      color: $text-color;
     }
     &__value {
       text-align: left;
       color: $text-color;
+    }
+    &::after{
+      display: none;
     }
     &__value--alone{}
   }
@@ -53,6 +65,7 @@
 
   &--required::before{
     line-height: 28px;
+    left: 5px;
   }
   &--small{
     padding: 5px 8px;
@@ -163,6 +176,32 @@
     &::after{
       left: 0;
       right: 0;
+    }
+  }
+}
+
+// Steps
+.van-steps{
+  &--horizontal{
+    .van-step__line{
+      height: 2px;
+    }
+  }
+  &--vertical{
+    .van-step__line{
+      width: 2px;
+      left: -16px;
+    }
+    .van-step:not(:last-child) .van-step__circle {
+      background-color: #fff;
+      width: 12px;
+      height: 12px;
+      border: 3px solid $blue;
+    }
+    .van-step:last-child {
+      .van-step__circle {
+        background-color: $blue;
+      }
     }
   }
 }

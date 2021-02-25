@@ -46,6 +46,10 @@ export default {
       padding-right: $gutter;
       margin-bottom: $gutter;
       max-height: 4.5rem;
+      img {
+        border-radius: 6px;
+        overflow: hidden;
+      }
     }
   }
 }

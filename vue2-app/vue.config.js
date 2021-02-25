@@ -5,7 +5,7 @@ const isDev = NODE_ENV ? true : false
 
 const mockServer = () => {
   if (NODE_ENV === 'development') {
-    return require('./mock/mockServer.js')
+    return require('./mock/mock-server.js')
   } else {
     return ''
   }
@@ -18,13 +18,13 @@ module.exports = {
   productionSourceMap: !isDev,
   devServer: {
     proxy: {
-      [VUE_APP_BASE_API]: {
-        target: 'http://httpbin.org',
-        changeOrigin: true,
-        pathRewrite: {
-          ['^' + VUE_APP_BASE_API]: '',
-        },
-      },
+      // [VUE_APP_BASE_API]: {
+      //   target: 'http://httpbin.org',
+      //   changeOrigin: true,
+      //   pathRewrite: {
+      //     ['^' + VUE_APP_BASE_API]: '',
+      //   },
+      // },
       '/api': {
         target: 'http://httpbin.org',
         changeOrigin: true,
@@ -33,7 +33,7 @@ module.exports = {
         },
       },
     },
-    // after: mockServer()
+    after: mockServer(),
   },
   configureWebpack: {
     resolve: {

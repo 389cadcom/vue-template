@@ -19,17 +19,18 @@
           <van-icon name="cross" />
         </template>
       </van-cell>
-      <van-cell required title="单元格" value="内容" />
+      <van-cell required title="单元格" value="内容" label="包含新特性和较大的功能更新" />
       <van-cell required title="单元格" size="large" value="内容" />
     </van-cell-group>
     <van-cell-group class="cell-detail">
+      <van-cell title-class="group-title" title="基础信息" />
       <van-cell required title="单元格" value="内容" />
       <van-cell required title="单元格" value="内容" />
     </van-cell-group>
     <van-cell-group title="field">
       <van-field label="单元格" input-align="right" placeholder="请输入" maxlength="12" />
       <van-field label="单元格" input-align="right" placeholder="请输入" maxlength="12" />
-      <van-field center type="textarea" rows="1" autosize class="field-box" label="自适合高度" placeholder="请输入" v-model="key" />
+      <van-field center type="textarea" rows="1" autosize label="自适合高度" placeholder="请输入" v-model="key" />
       <van-cell required title="文本" />
       <van-field type="textarea" rows="3" center class="field-box" placeholder="请输入" maxlength="12" show-word-limit />
     </van-cell-group>
@@ -46,10 +47,13 @@ export default {
       key: 'value',
     }
   },
+  mounted() {
+    this.handler()
+  },
   methods: {
     //@confirm()
     async handler() {
-      var res = await this.$api.getTest({ name: 'lonve', age: 10 })
+      var res = await this.$api.getUser({ name: 'lonve', age: 10 })
       console.log('object', res)
     },
   },

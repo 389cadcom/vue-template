@@ -1,5 +1,21 @@
 <template>
   <div class="cart">
+    <van-search class="dark" clearable shape="round" v-model="key" show-action placeholder="请输入搜索关键词">
+      <template #action1>
+        <!-- <van-button size="small" type="info" round @click="">搜索</van-button> -->
+      </template>
+    </van-search>
+    <van-steps :active="index">
+      <van-step>步骤1</van-step>
+      <van-step>步骤2</van-step>
+      <van-step>步骤3</van-step>
+    </van-steps>
+    <van-steps :active="-1" direction="vertical">
+      <van-step>步骤1</van-step>
+      <van-step>步骤2</van-step>
+      <van-step>步骤3</van-step>
+    </van-steps>
+
     <van-checkbox-group ref="groups" v-model="result" direction="horizontal">
       <van-checkbox v-for="(item, i) in goods" :key="i" :name="item.name">{{ item.label }}</van-checkbox>
     </van-checkbox-group>
@@ -10,6 +26,8 @@
 export default {
   data() {
     return {
+      key: '',
+      index: 1,
       goods: [
         { label: 'A', name: 'a' },
         { label: 'B', name: 'b' },

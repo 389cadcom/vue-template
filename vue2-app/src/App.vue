@@ -10,8 +10,10 @@
       <router-link to="/about">About</router-link>
       |
       <router-link to="/cart">Cart</router-link>
+      |
+      <router-link to="/list">List</router-link>
     </div>
-    <router-view class="router" />
+    <router-view class="router-view" />
   </div>
 </template>
 <script>

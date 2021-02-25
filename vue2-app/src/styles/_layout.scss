@@ -22,22 +22,18 @@ html {
 }
 
 html, body, #app{
-  height: 100vh;
+  height: 100%;
   position: relative;
-  background-color: #fff;
+  background-color: $bg;
 }
 
 body{
-  padding-top: env(safe-area-inset-top);    //iphone安全域
+  // padding-top: env(safe-area-inset-top);    //iphone安全域
   box-sizing:border-box;
   max-width: 640px;
   margin: 0 auto;
   font-size: .8rem;
 }
-#app{
-  height: calc(100vh - env(safe-area-inset-top));
-}
-
 
 .gray{
   background-color: #f0f2f5;
@@ -45,7 +41,7 @@ body{
 
 .router-view{
   height: 100%;
-  padding-top: 45px;          //nav-bar
+  // padding-top: 45px;          //nav-bar
   box-sizing: border-box;
   &.android{
     padding-top: 65px;
