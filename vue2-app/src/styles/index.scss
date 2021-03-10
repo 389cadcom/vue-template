@@ -1,3 +1,7 @@
 @import './common/base.scss';
 @import './common/vant.scss';
 @import './layout.scss';
+
+.gutter{
+  padding: $gutter;
+}

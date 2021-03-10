@@ -21,6 +21,11 @@ const routes = [
     name: 'list',
     component: () => import(/* webpackChunkName: "about" */ '@/views/demo/List.vue'),
   },
+  {
+    path: '/drag',
+    name: 'drag',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/demo/Drag.vue'),
+  },
 ]
 
 export default routes

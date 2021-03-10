@@ -34,14 +34,11 @@ body{
   margin: 0 auto;
   font-size: .8rem;
 }
-
-.gray{
-  background-color: #f0f2f5;
-}
+[v-cloak] { visibility: hidden }
 
 .router-view{
   height: 100%;
-  // padding-top: 45px;          //nav-bar
+  // padding-top: 45px;                   //nav-bar
   box-sizing: border-box;
   &.android{
     padding-top: 65px;
@@ -51,83 +48,58 @@ body{
   }
 }
 
-//导航栏标题
-.van-nav-bar{
-  &--fixed{
-    padding-top: 20px;
-    height: 45px;
-  }
-  &__title{
-    padding-top: 4px;
-  }
-  &__left, &__right{
-    top: 3px;
-    padding: 0 $gutter !important;
-    font-size: 16px;
-  }
-  &__text{
-    margin-top: 2px;
-  }
-}
-.header-bar{
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding-top: 20px;
-}
-
-$btnArea: 82px;                           //固定按钮高度
+$btnArea: 80px;                           //固定按钮高度
 .pages{
   height: 100%;
   overflow: auto;
-  box-sizing: border-box;
   overscroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   &.noscroll{
     -webkit-overflow-scrolling:initial;
   }
 
+  &.fixed-bottom{
+    padding-bottom: $btnArea;
+    .pages__oper{
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index:2;
+    }
+  }
+
+  //pages--滚动区域
+  .van-dropdown-menu + &{
+    height: calc(100% - 48px);
+  }
+  .van-search + &{
+    height: calc(100% - 44px);
+  }
+  .van-pull-refresh,.van-list{
+    height: 100%;
+  }
   .tabbar & {
     padding-bottom: 50px;
   }
-  .list-tabs &{
-    height: calc(100% - 44px);            //扣除tabs高度
-  }
-
-  &.fixed-bottom{
-    padding-bottom: $btnArea;
-  }
 }
 
-//提交
+//按钮区域
 .pages__oper {
   display: flex;
-  margin-top: 20px;
-  padding: 14px 16px;
+  padding: 13px 12px;
   background-color: #fff;
   .van-button{
     border-radius: 6px;
     font-size: 16px;
+    &:not(:last-child){
+      margin-right: 10px;
+    }
     &.linear{
       background-image: $linear;
       border: 0;
     }
-    &:not(.linear){
-      margin-right: 10px;
-    }
   }
-}
-
-
-//fixed全屏需设底部safe-area-inset-bottom
-.mark{
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  // background-color: #f0f2f5;
-  // background: linear-gradient(to bottom, #ffd54f,#cc8411)
 }
 
 //态态栏 andr:20px ios: 44px
@@ -136,41 +108,11 @@ $btnArea: 82px;                           //固定按钮高度
   body, .van-popup{
     padding-bottom: env(safe-area-inset-bottom);    
   }
-  $height: 44px;
-  .header-bar{
-    padding-top: $height;
-  }
-  .van-nav-bar{
-    &--fixed{
-      padding-top: $height;
-    }
-  }
-  .indexbar .van-popup{
-    padding-top: 90px;
-  }
+  
   .pages{
     &.fixed-bottom{
       padding-bottom: $btnArea - 24px;
     }
-    .tabbar & {
-      padding-bottom: 30px;
-    }
-  }
-  .detail-open .pages__oper {
-    bottom: 6px !important;
-  }
-  .van-tabbar{
-    padding-bottom: constant(safe-area-inset-bottom);
-    padding-bottom: env(safe-area-inset-bottom);
-    padding-bottom: 15px;
-  }
-  .mark{
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    background-color: #f0f2f5;
   }
 }
 @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3){

@@ -27,7 +27,7 @@ module.exports = {
       // },
       '/api': {
         target: 'http://httpbin.org',
-        changeOrigin: true,
+        changeOrigin: true, //开发环境跨域
         pathRewrite: {
           '^/api': '',
         },

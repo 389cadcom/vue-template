@@ -1,5 +1,5 @@
 // import MD5 from 'crypto-js/md5'
-const MD5 = require('blueimp-md5')
+// const MD5 = require('blueimp-md5')
 
 /**
  * 加密算法排序

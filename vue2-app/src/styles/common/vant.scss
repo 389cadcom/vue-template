@@ -3,13 +3,12 @@
   cell:  icon, title(label), default, right-icon, extra
   field: label, input, left-icon, right-icon, button, extra | label-width, label-align, input-align
 */
+.van-field__label.large{
+  width: 134px;
+}
 .cell-detail{
   padding-top: 12px;
   padding-bottom: 12px;
-  .group-title{
-    font-size: 18px;
-    font-weight: 500;
-  }
   .van-cell{
     $text-color:#222;
     padding-top: 5px;
@@ -34,6 +33,10 @@
 .van-cell{
   &-group{
     margin-top: 10px;
+    .group-title{
+      font-size: 18px;
+      font-weight: 500;
+    }
     &:first-of-type,
     &__title + .van-cell-group {
       margin-top: 0;
@@ -58,7 +61,7 @@
       }
     } 
     &.radius{
-      border-radius: $gutter/2;
+      border-radius: $radius;
       overflow: hidden;
     }
   }
@@ -130,9 +133,29 @@
   }
 }
 
+//导航栏标题
+.van-nav-bar{
+  &--fixed{
+    padding-top: 20px;
+    height: 45px;
+  }
+  &__title{
+    padding-top: 4px;
+  }
+  &__left, &__right{
+    top: 3px;
+    padding: 0 $gutter !important;
+    font-size: 16px;
+  }
+  &__text{
+    margin-top: 2px;
+  }
+}
 
 .van-tag{
+  border-radius: 4px;
   margin-right: 6px;
+  padding: 2px 6px 1px;
 }
 
 //上传--基于cell
@@ -150,8 +173,8 @@
     height: $size;
   }
   &__preview-delete{
-    top: -5px;
-    right: -4px;
+    top: -6px;
+    right: -5px;
     width: 15px;
     height: 15px;
     border-radius: 50%;
@@ -170,8 +193,7 @@
     margin-top: $gutter;
   }
   &__title{
-    color: $blue-1;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 500;
     &::after{
       left: 0;
@@ -184,12 +206,25 @@
 .van-steps{
   &--horizontal{
     .van-step__line{
-      height: 2px;
+      height: 1px;
+    }
+    .van-icon-checked{
+      background: #fff;
+      border-radius: 50%;
+      &::before{
+        content: '\F092'
+      }
+    }
+    .van-step__line,.van-step__circle-container{
+      top: 36px;
+    }
+    .van-step__circle-container{
+      padding: 0px 4px;
     }
   }
   &--vertical{
     .van-step__line{
-      width: 2px;
+      width: 1px;
       left: -16px;
     }
     .van-step:not(:last-child) .van-step__circle {
@@ -203,5 +238,8 @@
         background-color: $blue;
       }
     }
+  }
+  .van-step--vertical::after{
+    display: none;
   }
 }

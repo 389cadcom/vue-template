@@ -1,7 +1,3 @@
-@import './mixin/reset';
-@import './common/flex';
-// @import './mixin/animate';
-// @import './mixin/space';
 *{
   box-sizing: border-box;
 }
@@ -10,6 +6,9 @@
 }
 .blue {
   color: $blue !important;
+}
+.blue-1 {
+  color: $blue-1 !important;
 }
 .white {
   color: #fff !important;
@@ -24,8 +23,42 @@
 .h100 {
   height: 100% !important;
 }
-.img {
-  object-fit: fill;
-  width: 100%;
-  height: 100%;
+
+body {
+  margin: 0 auto;
+	max-width: 640px;
+  min-width: 320px;
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: -apple-system, Helvetica, sans-serif arial;
 }
+
+h1, h2,h3, h4, h5, p{
+  padding: 0;
+  margin: 0 auto;
+}
+.text-right{
+  text-align: right;
+}
+.text-center{
+  text-align: center;
+}
+.show{
+  display: block;
+}
+.hide{
+  display: none;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 6px 0;
+  padding: 0;
+}
+
+@import './flex';
+// @import './mixin/animate';
+// @import './mixin/space';

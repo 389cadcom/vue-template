@@ -1,8 +1,8 @@
 import wx from 'weixin-js-sdk'
-import $api from '@/api/api-list'
+import $api from '@/api/api-all'
 
 const wxsdk = {
-  appId: 'wx0f937ab2562e4371',
+  appId: 'wxccfa2e27ba1951ce',
   jsApiList: [
     'onMenuShareTimeLine',
     'onMenuShareAppMessage',
@@ -10,8 +10,7 @@ const wxsdk = {
     'updateAppMessageShareData',
     'getLocation',
     'openLocation',
-    'scanQRCode',
-    'chooseWXPay',
+    // 'scanQRCode', 'chooseWXPay',
     // 'startRecord', 'stopRecord', 'playVoice', 'pauseVoice', 'stopVoice', 'onVoiceRecordEnd', 'onVoicePlayEnd'
   ],
 }
@@ -27,7 +26,6 @@ wxsdk.setConfig = async function(url = location.origin) {
 
   var params = {
     jsApiList: wxsdk.jsApiList,
-    appId: wxsdk.appId,
     ...config.data,
   }
   return new Promise((resolve, reject) => {

@@ -2,7 +2,7 @@
 import VueMeta from 'vue-meta'
 
 import * as $utils from '@/utils'
-import $api from '@/api/api-list'
+import $api from '@/api/api-all'
 
 import VantUI from './vant-ui'            //统一注册vant ui
 import '@/icons'                          //引入svg-icon

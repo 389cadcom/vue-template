@@ -12,6 +12,8 @@
       <router-link to="/cart">Cart</router-link>
       |
       <router-link to="/list">List</router-link>
+      |
+      <router-link to="/drag">drag</router-link>
     </div>
     <router-view class="router-view" />
   </div>

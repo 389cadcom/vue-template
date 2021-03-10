@@ -6,10 +6,12 @@ import router from './router'
 import store from './store'
 
 import '@/components'
+import directive from '@/directives'
 
 Vue.prototype.$api = $api
 Vue.config.productionTip = false
 Vue.use(plugin)
+Vue.use(directive)
 
 new Vue({
   router,

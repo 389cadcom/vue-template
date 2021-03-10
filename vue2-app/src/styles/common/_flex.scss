@@ -9,10 +9,19 @@
 	&-v{
 		display:flex;
 		align-items: center;
+		&.around{
+			justify-content: space-around;
+		}
+		&.between{
+			justify-content: space-between;
+		}
 	}
 	&-h{
 		display:flex;
 		justify-content: center;
+		&.center{
+			align-items: center;
+		}
 	}
 	&-vh, &-center{
 		display:flex;
@@ -36,6 +45,9 @@
 		flex-direction: column;
 		
 		height: 100%;
+		&.around{
+			justify-content: space-around;
+		}
 		&.between{
 			justify-content: space-between;
 		}

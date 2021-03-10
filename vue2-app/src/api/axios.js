@@ -2,6 +2,7 @@ import axios from 'axios'
 import qs from 'qs'
 import { Toast } from 'vant'
 import { trimParmas } from './tools'
+import $store from '@/store'
 
 // console.log(axios.defaults.headers)
 const baseURL = ''

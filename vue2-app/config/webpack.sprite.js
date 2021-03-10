@@ -24,6 +24,27 @@ var templateFunction = function(data, icon) {
   return shared + '\n' + perSprite
 }
 
+//2倍图
+templateFunction = function(data, icon) {
+  var shared = `.${icon} { background-image: url(I); background-size:Wpx Hpx; display:inline-block; }`
+    .replace('I', data.sprites[0].image)
+    .replace('W', data.sprites[0].total_width / 2)
+    .replace('H', data.sprites[0].total_height / 2)
+
+  var perSprite = data.sprites
+    .map(function(sprite) {
+      return '.icon-N { width: Wpx; height: Hpx; background-position: Xpx Ypx; }'
+        .replace('N', sprite.name)
+        .replace('W', sprite.width / 2)
+        .replace('H', sprite.height / 2)
+        .replace('X', sprite.offset_x / 2)
+        .replace('Y', sprite.offset_y / 2)
+    })
+    .join('\n')
+
+  return shared + '\n' + perSprite
+}
+
 /**
  * 雪碧图插件
  * @param {基础路径} baseUrl
